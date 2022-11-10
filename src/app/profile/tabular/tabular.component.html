@@ -1,0 +1,41 @@
+<table class="table table-bodered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Country</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employeeArr">
+      <td>{{ employee.id }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.age }}</td>
+      <td>{{ employee.country }}</td>
+      <td>{{ employee.salary }}</td>
+      <td><a class="btn btn-primary" href="#" role="button">View</a></td>
+    </tr>
+    <tr>
+    <td>
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="#"><<</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">1</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">2</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">>></a></li>
+      </ul>
+    </td>
+    </tr>
+    
+  </tbody>
+
+</table>
+ 

@@ -1,0 +1,107 @@
+<!-- <div class="card-body" *ngIf="employee">
+    <form novalidate
+          >
+      <fieldset>
+        <legend>Basic Product Information</legend>
+        <router-outlet></router-outlet>
+        <div class="row mt-4">
+          <label class="col-md-2 col-form-label"
+                 for="productNameId">Employee Name</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="productNameId"
+                   type="text"
+                   placeholder="Name (required)"
+                   required
+                   minlength="3"
+                   
+                   name="Name">
+                   
+                   
+          </div>
+        </div>
+  
+        <div class="row mt-2">
+          <label class="col-md-2 col-form-label"
+                 for="productCodeId">Age</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="productCodeId"
+                   type="text"
+                   placeholder="Code (required)"
+                   required
+                   
+                   name="productCode">
+                  
+                   
+          </div>
+        </div>
+  
+        <div class="row mt-2">
+          <label class="col-md-2 col-form-label"
+                 for="descriptionId">Salary</label>
+          <div class="col-md-8">
+            <textarea class="form-control"
+                      id="descriptionId"
+                      placeholder="Description"
+                      rows=3
+                     
+                      name="description"></textarea>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  
+  <div class='alert alert-danger'
+       *ngIf='errorMessage'>{{errorMessage}}
+  </div> -->
+  <div class="card">
+    <div class="card-header">
+      {{pageTitle}}
+    </div>
+  
+    <div class="card-body"
+         *ngIf="employee">
+      <div class="wizard">
+        <a [routerLink]="['info']"
+           routerLinkActive="active">
+          Basic Information of Employee<span [ngClass]="{'fa fa-exclamation': !isValid('info')}"></span>
+      </a>
+      </div>
+  
+      <router-outlet></router-outlet>
+  
+      <div class="row mb-2">
+        <div class="col-md-4">
+          <button class="btn btn-primary me-3"
+                  style="width:80px"
+                  type="button"
+                  [title]="isValid() ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                  [disabled]="!isValid()"
+                  (click)="saveProduct()">
+            Save
+          </button>
+          <button class="btn btn-outline-secondary me-3"
+                  style="width:80px"
+                  type="button"
+                  title="Cancel your edits"
+                  [routerLink]="['/products']">
+            Cancel
+          </button>
+          <button class="btn btn-outline-warning"
+                  style="width:80px"
+                  type="button"
+                  title="Delete this employee"
+                  (click)="deleteProduct()">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="alert alert-danger"
+       *ngIf="errorMessage">{{errorMessage}}
+  </div>
+  

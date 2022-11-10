@@ -1,0 +1,70 @@
+<div class="card-body" *ngIf="product">
+
+    <form novalidate
+          >
+  
+      <fieldset>
+        <legend>Basic Employee Information</legend>
+  
+        <div class="row mt-4">
+          <label class="col-md-2 col-form-label"
+                 for="productNameId">Employee Name</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="productNameId"
+                   type="text"
+                   placeholder="Name (required)"
+                   required
+                   minlength="3">
+            <span class="invalid-feedback">
+              <span *ngIf="productNameVar.errors?.['required']">
+                Product name is required.
+              </span>
+  
+              <span *ngIf="productNameVar.errors?.['minlength']">
+                Product name must be at least three characters.
+              </span>
+  </span>
+  
+          </div>
+        </div>
+  
+        <div class="row mt-2">
+          <label class="col-md-2 col-form-label"
+                 for="productCodeId">Age</label>
+  
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="productCodeId"
+                   type="text"
+                   placeholder="Code (required)"
+                   required
+                   >
+            <span class="invalid-feedback">
+              <span *ngIf="productCodeVar.errors?.['required']">
+                Age is required.
+              </span>
+            </span>
+  
+          </div>
+        </div>
+  
+        <div class="row mt-2">
+          <label class="col-md-2 col-form-label"
+                 for="descriptionId">Salary</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                     type="text"
+                      id="descriptionId"
+                      placeholder="Description"
+                      rows=3
+                      name="country">
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  
+  <div class='alert alert-danger'
+       *ngIf='errorMessage'>{{errorMessage}}
+  </div>

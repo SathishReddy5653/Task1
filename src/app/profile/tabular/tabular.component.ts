@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Employee } from '../models/employee';
-import  employeeData from '../../assets/data/employeeData.json';
+import { Employee } from '../../models/employee';
+import  employeeData from '../../../assets/data/employeeData.json';
 @Component({
   selector: 'app-tabular',
   templateUrl: './tabular.component.html',
